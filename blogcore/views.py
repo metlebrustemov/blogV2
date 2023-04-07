@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from blogcore.models import BlogPost
+from django.core.paginator import Paginator
 
 def index(request):
     posts = BlogPost.objects.all()[:10]  
@@ -14,7 +15,12 @@ def post(request, slug):
     return render(request, 'post.html', context={"post":post})
 
 def posts(request):
-    return render(request, 'posts.html', context={})
+    _posts = BlogPost.objects.all()
+    p = Paginator(_posts, 10)
+    print(request.GET)
+    page_num = request.GET.get('page', 1)
+    page = p.get_page(page_num)
+    return render(request, 'posts.html', context={"page":page, "p":p})
 
 
 def contact(request):
