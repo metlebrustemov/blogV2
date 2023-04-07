@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404
 from blogcore.models import BlogPost
 
 def index(request):
@@ -9,8 +9,9 @@ def index(request):
 def about(request):
     return render(request, 'about.html', context={})
 
-def post(request):
-    return render(request, 'post.html', context={})
+def post(request, slug):
+    post = get_object_or_404(BlogPost, slug=slug)
+    return render(request, 'post.html', context={"post":post})
 
 def posts(request):
     return render(request, 'posts.html', context={})
