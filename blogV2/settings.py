@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'ckeditor',
+
     'blogcore',
 ]
 
@@ -66,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blogcore.context_processors.settings',
             ],
         },
     },
@@ -137,3 +140,9 @@ else:
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
