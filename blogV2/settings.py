@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qfl8v#^mle$+b1vo%s754_4e=%lfq$usq@+(!3z)xv$_hn3%$y
     'SECRET_KEY') is None else os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
