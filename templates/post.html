@@ -45,6 +45,14 @@
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <div class="btn-group flex-wrap" data-toggle="buttons">
+                    {% for t in post.tags.all %}
+                    <a href="{% url 'posts' slug=t.slug %}" role="button" class="btn btn-link btn-sm">#{{t.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            
         </article>
         <!-- Footer-->
         {% include 'components/footer.html' %}
