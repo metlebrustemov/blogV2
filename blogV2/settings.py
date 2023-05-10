@@ -59,6 +59,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blogV2.urls'
 
+AUTH_USER_MODEL = "blogcore.AdLucemUser"
+
 
 TEMPLATES = [
     {
@@ -157,7 +159,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "Lecum",
     "copyright": "Metleb Rustemov",
     "user_avatar": None,
-     "show_sidebar": True,
+    "show_sidebar": True,
     "navigation_expanded": True,
     "topmenu_links": [
 
