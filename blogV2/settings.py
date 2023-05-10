@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qfl8v#^mle$+b1vo%s754_4e=%lfq$usq@+(!3z)xv$_hn3%$y
     'SECRET_KEY') is None else os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ckeditor',
+    'django_extensions',
 
     'blogcore',
 ]
@@ -128,8 +129,6 @@ STATIC_URL = '/static/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# STATIC_ROOT = '/static/'
-
 if DEBUG:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
@@ -187,12 +186,13 @@ JAZZMIN_SETTINGS = {
     },
 }
 JAZZMIN_UI_TWEAKS = {
-      "navbar_small_text": False,
+    "navbar_small_text": False,
     "footer_small_text": False,
     "body_small_text": False,
     "brand_small_text": False,
     "accent": "accent-teal",
     "navbar": "navbar-dark",
+    "brand_colour":"navbar-success",
     "no_navbar_border": False,
     "navbar_fixed": False,
     "layout_boxed": False,
